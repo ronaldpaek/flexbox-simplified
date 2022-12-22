@@ -1,0 +1,50 @@
+.flex-container {
+  display: flex;
+
+  width: 95%;
+  max-width: 90rem;
+  border: 5px solid #000;
+  padding: 2em;
+}
+
+.flex-item {
+  margin: 0.5rem;
+  border: 5px solid #aaa;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5em;
+}
+
+/*  1.0 Predict what will happen when you
+        add a width here.
+        1.1 Set it and see if you were right
+
+    2.0 What happens when you:
+        2.1 change the below declaration to a max-width
+        2.2 change the below declaration to a min-width
+
+    3.0 Along with the width, what happens when you
+        add a mix-width and max-width?
+*/
+
+.flex-item:nth-child(1) {
+  flex-grow: 1;
+  /* 1) nothing will change, because flex-grow is only on first child */
+  width: 5500px;
+  /* 3) item will try to be the size defined for with, but if it needs to shrink
+        it will shrink as small as it can to fix the content, but it will also grow,
+        but will not exceed the max width
+  */
+  max-width: 2000px;
+}
+
+.flex-item:nth-child(2) {
+  background: steelblue;
+  /* 2)
+        max-width: item will shrink as small as possible to fit the content
+        min-width: item will be that width like a fixed width
+  */
+  width: 325px;
+  /* max-width: 500px; */
+  /* min-width: 700px; */
+}
